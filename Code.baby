@@ -1,0 +1,17 @@
+# Please Run CreateSuperhero.ps1 as Administrator
+
+$Parents = @(Get-Parent | Where-Object {$_.Name -eq "Steve Ballmer"})
+
+# Initialize Baby
+
+$Baby = New-Person -TypeName "Boy" -Source $Parents.DNA 
+
+$Baby | Add-Attribute -Name "Cuteness" -Value "100"
+
+$Baby.Love = "Full"
+
+# Start Life
+
+Start-Process -FilePath "Life.exe" -LoadUserProfile $Baby
+
+Write-Output "Congratulations!"
